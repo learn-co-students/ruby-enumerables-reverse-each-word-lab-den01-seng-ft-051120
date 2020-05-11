@@ -1,13 +1,19 @@
 def reverse_each_word(str)
-  arr = str.split
-  arr.each { |i| p i.reverse }
-  # .join the elements of the Array together into a String
+  # create a new empty array
+  new_arr = []
+  # split the string into an array
+  arr = str.split  
+  # enumerate over each element in the array using .each, and reverse the character order of each individual element in the array
+  arr.each { |i| new_arr << i.reverse } 
+  # turn the new array into a string and return
+  return new_arr.join(" ")
 end
 
-# String to Array
-# Reverse each individual word in the Array, without changing the order of the words
-  # Do I need to get all of the Strings out of the Array to be able to reverse them? 
-  # This seems unlikely.
-# Array to String (.join ?), then return
+def reverse_each_word(str)
+  new_arr = []
+  arr = str.split  
+  arr.collect { |i| new_arr << i.reverse } 
+  return new_arr.join(" ")
+end
 
 
